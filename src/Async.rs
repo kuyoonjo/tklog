@@ -502,13 +502,14 @@ impl Log {
         self
     }
 
-    pub fn set_attr_format<F>(&self, f: F)
+    pub fn set_attr_format<F>(&self, f: F) -> &Self
     where
         F: FnMut(&mut AttrFormat) + Send + Sync + 'static,
     {
         unsafe {
             asynclog.set_attr_format(f);
         }
+        self
     }
 }
 
