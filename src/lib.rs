@@ -140,7 +140,6 @@ pub mod Format {
     pub const LongFileName: u8 = 8;
     pub const ShortFileName: u8 = 16;
     pub const LevelFlag: u8 = 32;
-    pub const LevelFlagNoBracket: u8 = 64;
 }
 
 #[derive(PartialEq, PartialOrd, Clone, Copy, Debug)]
