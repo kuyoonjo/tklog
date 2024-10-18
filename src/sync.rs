@@ -542,13 +542,14 @@ impl Log {
     //     unsafe { synclog.set_timefmt(timefmt) };
     // }
 
-    pub fn set_attr_format<F>(&self, f: F)
+    pub fn set_attr_format<F>(&self, f: F) -> &Self
     where
         F: FnMut(&mut AttrFormat) + Send + Sync + 'static,
     {
         unsafe {
             synclog.set_attr_format(f);
         }
+        self
     }
 }
 
